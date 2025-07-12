@@ -206,21 +206,21 @@
             const wssDetails = JSON.parse(window.localStorage.getItem('wssDetails'))
             console.log(wssDetails);
 
-            // await obs.call("CallVendorRequest", {
-            //     vendorName: "obs-browser",
-            //     requestType: "emit_event",
-            //     requestData: {
-            //         event_name: "ws-details",
-            //         event_data: { wssDetails },
-            //     },
-            // });
+            await obs.call("CallVendorRequest", {
+                vendorName: "obs-browser",
+                requestType: "emit_event",
+                requestData: {
+                    event_name: "ws-details",
+                    event_data: { wssDetails },
+                },
+            });
             
-            sendToOBS(wssDetails, "ws-details");
+            // sendToOBS(wssDetails, "ws-details");
             sendToOBS({ url: `${document.getElementById("location").value}/fullscreen?postMessageEvents=true` }, "setSource");
 
         });
 
-    function sendToOBS(msgParam, eventName) {
+    function sendToOBS(msgParam, eventName, eventDetailName) {
         //console.log("sending message:", JSON.stringify(msgParam));
         const webSocketMessage = JSON.stringify(msgParam);
         //send results to OBS Browser Source
