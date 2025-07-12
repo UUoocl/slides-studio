@@ -48,7 +48,7 @@
             "name": "Camera Lower Right"
         }
     ],
-    "name": "slides.com",
+    "name": "slides-studio",
     "groups": [],
     "quick_transitions": [
         {
@@ -1814,7 +1814,7 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "http://127.0.0.1:3001/slides_studio_OBS_browser_source.html",
+                "url": "https://uuoocl.github.io/slides-studio/slides_studio_OBS_browser_source.html",
                 "width": 1920,
                 "height": 1080
             },

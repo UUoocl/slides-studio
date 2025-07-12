@@ -72,7 +72,7 @@
         window.addEventListener('setSource', async (event) => {
             let data = JSON.parse(event.detail.webSocketMessage);
             document.getElementById("revealIframe").setAttribute("src", `${data.url}`);
-            //https://slides.com/d/vHgdZrc/live?postMessageEvents=true
+            
         })
 
         window.addEventListener('slide-changed', async (event) => {
