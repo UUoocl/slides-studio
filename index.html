@@ -60,7 +60,7 @@
                 <label for="configName">Enter the URL or Path to a Slides deck:</label>
             </div>
             <input class= "slide-location" type="text" id="location" name="locationName" list="configNameValues"
-                placeholder="https://slides.com/uuoocl/deck-48ea10/fullscreen" />
+                placeholder="https://slides.com/username/deck-id/" />
             <datalist id="slideLocations">
             </datalist>
             <div id="openSlidesButton">
@@ -116,11 +116,15 @@
     
     <!-- <script src='lib/slideChangedMessages.js'></script> -->
     <script src='lib/getOBSData.js'></script>
-    <script src='lib/getSlideData.js'></script>
+    <script src='lib/getSlideDataV2.js'></script>
     <script src='lib/setupTable.js'></script>
     <script src='lib/sendSelectedRowToOBS.js'></script>
 
     <script>
+        let slideDeckId;
+        const iframe = document.getElementById("slidesDeck");
+        let slideState = {};
+
         window.addEventListener("load", (event) => {
             console.log("page is fully loaded");
             if (localStorage.getItem("wssDetails")) {
@@ -167,12 +171,13 @@
 
         //button functions            
         function setSlides() {
+            slideDeckId = document.getElementById("location").value.split("/deck-")[1];
             iframe
-                .setAttribute("src",document.getElementById("location").value)
+                .setAttribute("src",`${document.getElementById("location").value}/fullscreen?postMessageEvents=true`)
             
             document.getElementById("slides-container").hidden=false;
             document.getElementById("connectToOBS").hidden=false;
-            if (obs.connected == true) { sendToOBS({ url: document.getElementById("location").value }, "setSource") };
+            if (obs.connected == true) { sendToOBS({ url: `${document.getElementById("location").value}/fullscreen?postMessageEvents=true` }, "setSource") };
 
         }
 
@@ -211,7 +216,8 @@
             // });
             
             sendToOBS(wssDetails, "ws-details");
-            sendToOBS({ url: document.getElementById("location").value}, "setSource");
+            sendToOBS({ url: `${document.getElementById("location").value}/fullscreen?postMessageEvents=true` }, "setSource");
+
         });
 
     function sendToOBS(msgParam, eventName) {

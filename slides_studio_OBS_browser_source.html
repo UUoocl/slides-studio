@@ -114,9 +114,9 @@
                 //         })[0];
                 //         // console.log("current slide", currentSlide)
                         
-                    if(Object.hasOwn(slidesAttributes, 'data-scene-entrance')){
+                    if(Object.hasOwn(slidesAttributes, 'scenes')){
                         console.log("scene tag found")
-                        obs.call("SetCurrentProgramScene",{sceneName: slidesAttributes['data-scene-entrance']})
+                        obs.call("SetCurrentProgramScene",{sceneName: slidesAttributes['scenes']})
                     };
                     
                     if(Object.hasOwn(slidesAttributes, 'cameraPosition')) {
@@ -131,8 +131,7 @@
                             //disable other cameras
                             await disableSceneItems("Camera Overlay Position")  
                         };
-                    }
-                    if(Object.hasOwn(slidesAttributes, 'cameraPosition')){
+                    
                         if(!slidesAttributes['cameraPosition'].includes("Full")){
                             console.log("camera overlay tag found")
                             //disable this scenes cameras
@@ -148,10 +147,10 @@
                         };
                     }
 
-                    if (Object.hasOwn(slidesAttributes, 'data-slide-entrance')){
+                    if (Object.hasOwn(slidesAttributes, 'slidePosition')){
                         console.log("slide class tag found")
-                        console.log("class name", slidesAttributes['data-slide-entrance'])
-                        const className = slidesAttributes['data-slide-entrance']
+                        console.log("class name", slidesAttributes['slidePosition'])
+                        const className = slidesAttributes['slidePosition']
                         if(className !== undefined){
                             document.getElementById("revealIframe").className = className;
                         } 
@@ -159,7 +158,6 @@
                 // }
         })
           
-       
         async function disableSceneItems(sceneName){
             //disable all camera scene sources
             const sceneItems = await obs.call("GetSceneItemList",{"sceneName":sceneName});
