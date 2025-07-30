@@ -62,6 +62,7 @@
         let slideStateObj = {};
         let slidesArray;
         let dropDownOptions = {};
+        let selectedRowNumber = 0;
         
         window.addEventListener("DOMContentLoaded", (event) => {
             console.log("studio iframe page is fully loaded");
@@ -111,6 +112,7 @@
                 console.log(rowComponent[0].getPosition())
                 table.deselectRow();
                 table.selectRow(table.getRowFromPosition(rowComponent[0].getPosition()));
+                selectedRowNumber = rowComponent[0].getPosition()
                 table.scrollToRow(rowComponent[0], "top")
                 
                 //select fragment
@@ -121,6 +123,7 @@
                     const fragmentRow = children.filter(row => row._row.data.slideState === stateString)
                     console.log("fragment row", fragmentRow)
                     table.selectRow(table.getRowFromPosition(fragmentRow[0].getPosition()));
+                    selectedRowNumber = fragmentRow[0].getPosition()
                     console.log("fragment get row", table.getSelectedRows())
                     rowData = table.getSelectedRows()[1].getData();
                 } else {
