@@ -106,7 +106,6 @@
 
         if (Object.hasOwn(currentSlide, 'slidePosition')) {
             console.log("slide class tag found")
-            console.log("class name", currentSlide['data-slide-entrance'])
             const className = currentSlide['slidePosition']
             if (className !== undefined) {
                 document.getElementById("revealIframe").className = className;
