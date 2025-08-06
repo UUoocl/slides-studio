@@ -96,13 +96,13 @@
             await setSourceVisibilityByName("Camera Position", currentSlide['cameraPosition'], true)
         };
 
-        if (Object.hasOwn(currentSlide, 'shapeMask')){ 
+        if (Object.hasOwn(currentSlide, 'cameraShape')){ 
             console.log("camera mask found")
             //disable this scenes cameras
             await disableSceneItems("Camera Shape")
             
             //enable source
-            await setSourceVisibilityByName("Camera Shape", currentSlide['shapeMask'], true)
+            await setSourceVisibilityByName("Camera Shape", currentSlide['cameraShape'], true)
         };        
         
         if (Object.hasOwn(currentSlide, 'slidePosition')) {
