@@ -82,9 +82,9 @@
   async function processTags(currentSlide) {
         // console.log("current slide", currentSlide)
 
-        if (Object.hasOwn(currentSlide, 'scenes')) {
+        if (Object.hasOwn(currentSlide, 'scene')) {
             console.log("scene tag found")
-            obs.call("SetCurrentProgramScene", { sceneName: currentSlide['scenes'] })
+            obs.call("SetCurrentProgramScene", { sceneName: currentSlide['scene'] })
         };
 
         if (Object.hasOwn(currentSlide, 'cameraPosition')){ 
