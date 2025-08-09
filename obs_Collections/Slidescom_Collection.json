@@ -1,6 +1,6 @@
 {
-    "current_scene": "Scene Slides over Camera",
-    "current_program_scene": "Scene Slides over Camera",
+    "current_scene": "Scene Camera Over Slides",
+    "current_program_scene": "Scene Camera Over Slides",
     "scene_order": [
         {
             "name": "----------SETTINGS----------"
@@ -1223,7 +1223,7 @@
                     {
                         "name": "Camera Upper Left",
                         "source_uuid": "d62189f8-fe02-4408-bdee-d58ee35878e4",
-                        "visible": false,
+                        "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -1498,7 +1498,7 @@
                     {
                         "name": "Camera Full Screen",
                         "source_uuid": "50ef12b5-0283-4a23-9c8d-c475587fed77",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -1928,7 +1928,7 @@
                     {
                         "name": "Circle",
                         "source_uuid": "0fe2e5f7-8ce0-4ad9-a9ff-3227bf39038f",
-                        "visible": false,
+                        "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -2038,7 +2038,7 @@
                     {
                         "name": "None",
                         "source_uuid": "566dbfe3-0ea5-4d92-903f-3c666e562dbb",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -2107,6 +2107,10 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.11": [],
                 "libobs.hide_scene_item.11": [],
+                "libobs.show_scene_item.13": [],
+                "libobs.hide_scene_item.13": [],
+                "libobs.show_scene_item.12": [],
+                "libobs.hide_scene_item.12": [],
                 "libobs.show_scene_item.8": [],
                 "libobs.hide_scene_item.8": [],
                 "libobs.show_scene_item.3": [],
@@ -2116,11 +2120,7 @@
                 "libobs.show_scene_item.6": [],
                 "libobs.hide_scene_item.6": [],
                 "libobs.show_scene_item.7": [],
-                "libobs.hide_scene_item.7": [],
-                "libobs.show_scene_item.12": [],
-                "libobs.hide_scene_item.12": [],
-                "libobs.show_scene_item.13": [],
-                "libobs.hide_scene_item.13": []
+                "libobs.hide_scene_item.7": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -2581,10 +2581,10 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
+                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssAnimation_Circle.html",
                 "width": 1920,
                 "height": 1080,
-                "css": "body { margin: 0px auto; overflow: hidden; }",
-                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssAnimation_Circle.html"
+                "css": "body { margin: 0px auto; overflow: hidden; }"
             },
             "mixers": 255,
             "sync": 0,
@@ -2616,10 +2616,10 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
+                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssAnimation_Square.html",
                 "width": 1920,
                 "height": 1080,
-                "css": "body { margin: 0px auto; overflow: hidden; }",
-                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssAnimation_Square.html"
+                "css": "body { margin: 0px auto; overflow: hidden; }"
             },
             "mixers": 255,
             "sync": 0,
@@ -2651,10 +2651,10 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
+                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssCircle.html",
                 "width": 1920,
                 "height": 1080,
-                "css": "body { margin: 0px auto; overflow: hidden; }",
-                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssCircle.html"
+                "css": "body { margin: 0px auto; overflow: hidden; }"
             },
             "mixers": 255,
             "sync": 0,
@@ -2686,10 +2686,10 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
+                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssSquare.html",
                 "width": 1920,
                 "height": 1080,
-                "css": "body {  margin: 0px auto; overflow: hidden; }",
-                "url": "https://uuoocl.github.io/slides-studio/cameraShapes/cameraShape_cssSquare.html"
+                "css": "body {  margin: 0px auto; overflow: hidden; }"
             },
             "mixers": 255,
             "sync": 0,
