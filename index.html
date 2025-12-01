@@ -421,6 +421,8 @@ body[data-speaker-layout="teleprompter"] #current-slide,
   </div>
   
   <script src="lib/obs-ws.js"></script>
+  <script src="obs_webSocket_details/websocketDetails.js"></script>
+  <script src="lib/obsWssConnectionManager.js"></script>
   <script src='lib/obsOpen.js'></script>
   <script id ="setupForm">
     window.addEventListener("load", (event) => {
@@ -472,8 +474,9 @@ body[data-speaker-layout="teleprompter"] #current-slide,
       connected = false,
       scroller,
       slideDeck,
-      deckName;
-
+      deckName,
+      slideDeckURL;
+      
       let slidesArray = []
       let slidesLoaded = false;
       let tableLoaded = false;
@@ -484,14 +487,24 @@ body[data-speaker-layout="teleprompter"] #current-slide,
         document.getElementById("upcoming-slide").hidden = false;
         document.getElementById("speaker-controls").hidden = false;
         document.getElementById("speaker-layout").hidden = false;
+        
+        //create element
         //set slides url
-        slideDeck = `${document.getElementById("location").value}/fullscreen`
+        slideDeckURL = new URL(document.getElementById("location").value)
+        if(slideDeckURL.origin === "https://slides.com"){
+          slideDeck = `${document.getElementById("location").value}/fullscreen`
+          loadScript('lib/getSlideData-slides_com.js')
+        } else {
+          slideDeck = `${document.getElementById("location").value}`
+          loadScript("lib/getSlideData-localhost.js")
+        }
         
         //send slide url to OBS browser source
         sendToOBS({url: slideDeck}, "set-slides-studio-url");
         
         connectionStatus.style.display = "none";
         setupLayout();
+        setupIframes();
         handleConnectMessage();
         window.document.getElementById("speaker-controls").focus();
       }
@@ -570,7 +583,6 @@ body[data-speaker-layout="teleprompter"] #current-slide,
         if (connected === false) {
           connected = true;
 
-          setupIframes();
           setupKeyboard();
         }
       }
@@ -800,11 +812,34 @@ body[data-speaker-layout="teleprompter"] #current-slide,
         };
       }
 
+      function loadScript(script, module = false, callback = false) {
+        const scriptElem = document.createElement("script");
+        scriptElem.src = `${script}`;
+        //scriptElem.async = script.async;
+        scriptElem.type = 'text/javascript';
+
+        if (module) {
+          scriptElem.type = 'module';
+        }
+
+        scriptElem.onload = () => {
+          console.log(`${script} Script loaded successfuly`);
+          if (callback) {
+            callback();
+          }
+        };
+
+        scriptElem.onerror = () => {
+          console.log(`${script} Error occurred while loading script`);
+        };
+        
+        document.body.appendChild(scriptElem);
+      }
+
 //#endregion
     
     </script>
     <script src="lib/getOBSData.js"></script>
-    <script src="lib/getSlideDataV2.js"></script>
     <script src="lib/slideSync_SpeakerView_Browser.js"></script> 
   </body>
 </html>
