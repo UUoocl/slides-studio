@@ -501,7 +501,7 @@ body[data-speaker-layout="teleprompter"] #current-slide,
           obsWss.call("SetInputSettings", {
             inputName: 'slides',
             inputSettings: {
-              url: `${slideDeckURL.origin}/slides-studio-main/slides_studio_OBS_browser_source.html`,
+              url: window.location.href.replace("index.html","slides_studio_OBS_browser_source.html"),
             },
           });
         }
