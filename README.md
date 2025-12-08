@@ -14,3 +14,12 @@ Slide Studio innovates on the Reveal.js "[speaker view](https://revealjs.com/spe
  - [Slides Studio Github Page](https://uuoocl.github.io/03-tutorials/slidesstudio-gh/)
  - [Slides Studio with the Obsidian Plugin Slides Extended](https://uuoocl.github.io/03-tutorials/slidesstudio-obsidian/)
  - [Slides Studio with an OBS Python Script HTTP server](https://uuoocl.github.io/03-tutorials/slidesstudio-py/)
+
+this project is inspired by
+[reveal.js](revealjs.com)
+[obs](obsproject.com)
+[telepronpter js](https://github.com/manifestinteractive/teleprompter)
+[P5js](https://p5js.org/)
+[the coding train](https://thecodingtrain.com/)
+[slides Extended for obsidian](https://github.com/ebullient/obsidian-slides-extended)
+many other projects and content creators
