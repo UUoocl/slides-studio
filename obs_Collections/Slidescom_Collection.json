@@ -1,6 +1,6 @@
 {
-    "current_scene": "Set Camera",
-    "current_program_scene": "Set Camera",
+    "current_scene": "Scene Slides over Camera",
+    "current_program_scene": "Scene Slides over Camera",
     "scene_order": [
         {
             "name": "----------SETTINGS----------"
@@ -93,7 +93,7 @@
     "preview_locked": false,
     "scaling_enabled": false,
     "scaling_level": -6,
-    "scaling_off_x": 3.458186388015747,
+    "scaling_off_x": 3.4581868648529053,
     "scaling_off_y": 0.0,
     "virtual-camera": {
         "type2": 3
@@ -331,28 +331,7 @@
             "pauseRecordTimer": true
         },
         "pasteTransformHotkey": [],
-        "scripts-tool": [
-            {
-                "path": "/Users/jonwood/Documents/myGithub/UUinsome/01_listen_for_wss_signal.py",
-                "settings": {}
-            },
-            {
-                "path": "/Users/jonwood/Documents/myGithub/UUinsome/01_load_wss_config.py",
-                "settings": {
-                    "status_text": "Please select a file."
-                }
-            },
-            {
-                "path": "/Users/jonwood/Documents/myGithub/UUinsome/01_send_wss_connect_event.py",
-                "settings": {
-                    "browser_event_hotkey": []
-                }
-            },
-            {
-                "path": "/Users/jonwood/Documents/myGithub/UUinsome/02_obs_python_local_http.py",
-                "settings": {}
-            }
-        ],
+        "scripts-tool": [],
         "source-dock": {
             "docks": [],
             "windows": [],
@@ -1720,7 +1699,7 @@
                     {
                         "name": "cssSquare",
                         "source_uuid": "73b91793-f91f-4acf-9dfb-39b3441c50eb",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -2105,7 +2084,7 @@
                     {
                         "name": "None",
                         "source_uuid": "566dbfe3-0ea5-4d92-903f-3c666e562dbb",
-                        "visible": false,
+                        "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -3505,10 +3484,10 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.1": [],
-                "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.18": [],
-                "libobs.hide_scene_item.18": []
+                "libobs.hide_scene_item.18": [],
+                "libobs.show_scene_item.1": [],
+                "libobs.hide_scene_item.1": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -3930,7 +3909,7 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "http://localhost:3000/slides-studio/slides_studio_OBS_browser_source.html",
+                "url": "https://uuoocl.github.io/slides-studio/slides_studio_OBS_browser_source.html",
                 "width": 1920,
                 "height": 1080,
                 "fps_custom": true
