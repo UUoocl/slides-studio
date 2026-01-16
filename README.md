@@ -22,4 +22,4 @@ this project is inspired by
 [P5js](https://p5js.org/)
 [the coding train](https://thecodingtrain.com/)
 [slides Extended for obsidian](https://github.com/ebullient/obsidian-slides-extended)
-many other projects and content creators
+many other projects and creators
